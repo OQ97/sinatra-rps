@@ -2,8 +2,24 @@ require "sinatra"
 require "sinatra/reloader"
 
 get("/") do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+  erb(:rules)
+end
+
+get ("/rock") do
+  options = ["rock", "paper", "scissors"]
+  @choice = options.sample
+  erb(:rock)
+
+end
+
+get ("/paper") do
+  options = ["rock", "paper", "scissors"]
+  @choice = options.sample
+  erb(:paper)
+end
+
+get ("/scissors") do
+  options = ["rock", "paper", "scissors"]
+  @choice = options.sample
+  erb(:scissors)
 end
